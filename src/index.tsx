@@ -79,7 +79,7 @@ export default function Command() {
       <MenuBarExtra.Submenu title="images" icon={Icon.Image}>
         {enableImages ? (
           images.map(image => (
-            <MenuBarExtra.Item title={image.title} icon={Icon.Image} onAction={() => open(image.image)} />
+            <MenuBarExtra.Item key={image.title} title={image.title} icon={Icon.Image} onAction={() => open(image.image)} />
           ))
         ) : null}
       </MenuBarExtra.Submenu>
@@ -87,7 +87,7 @@ export default function Command() {
       </MenuBarExtra.Submenu>
       <MenuBarExtra.Submenu title="upcoming events" icon={Icon.Calendar}>
         {upcomingEvents.map(event => (
-          <MenuBarExtra.Item title={`${event.date} - ${event.event}`} onAction={() => open(event.rsvp)} />
+          <MenuBarExtra.Item key={event.event} title={`${event.date} - ${event.event}`} onAction={() => open(event.rsvp)} />
         ))}
       </MenuBarExtra.Submenu>
       <MenuBarExtra.Item title="chai_recipe" icon={Icon.Stars} onAction={() => confirmAlert({ title: "this file is locked. please contact the owner for access. owner: alec dilanchian", })} />
